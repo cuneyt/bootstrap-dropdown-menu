@@ -14,9 +14,9 @@
 	</style>
 
 
-    /* JAVASCRİPT TİTİT */ 
+    /* JAVASCRİPT */ 
 
-    /* JAVA TİTTİgit */ 
+
 		<script>
 	  	if( $('ul').hasClass('sub-menu') )
     	{
