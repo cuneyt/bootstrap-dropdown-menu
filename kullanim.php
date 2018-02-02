@@ -15,6 +15,8 @@
 
 
     /* JAVASCRİPT TİTİT */ 
+
+    /* JAVA TİTTİgit */ 
 		<script>
 	  	if( $('ul').hasClass('sub-menu') )
     	{
