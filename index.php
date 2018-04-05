@@ -31,17 +31,17 @@
 		}
 	
 
-		$users = $db->query('SELECT * FROM menuler where ust_menu=1 limit 20'); // Sadece Üst Menü Olanları Getiriyor.
-		foreach ($users as $key => $value) {	
+		$menuler = $db->query('SELECT * FROM menuler where ust_menu=1 limit 20'); // Sadece Üst Menü Olanları Getiriyor.
+		foreach ($menuler as $key => $value) {	
 		?>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <?=$value[menu_adi];?>
         </a>
-		<? $so = $db->query("SELECT * FROM menuler where ust_menu_id='$value[id]'"); $altmenu_sayisi = $so->rowCount(); // Üst Menü id'si yukarıda çekmiş olduğumuz menü id'sine bağlı olanları getiriyor.
+		<? $altmenuler = $db->query("SELECT * FROM menuler where ust_menu_id='$value[id]'"); $altmenu_sayisi = $altmenuler->rowCount(); // Üst Menü id'si yukarıda çekmiş olduğumuz menü id'sine bağlı olanları getiriyor.
 			if($altmenu_sayisi>0){ ?>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		        	<? foreach ($so as $key => $value2) {?>
+		        	<? foreach ($altmenuler as $key => $value2) {?>
 		        		 <a class="dropdown-item" href="#"><?=$value2[menu_adi];?></a>
 		        	<? } ?>
 		        </div>
